@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Tests.WelcomeScreen" parallel="none">
+
+    <test name="Simulator-Iphone X" enabled="true">
+        <parameter name="device" value="S-iPhone X" />
+
+        <classes>
+
+            <class name="Tests.WelcomeScreen.SignUpFlowScreenIndustryTests" />
+
+        </classes>
+    </test>
+
+    <test name="Simulator-Iphone 6" enabled="false">
+        <parameter name="device" value="S-iPhone 6" />
+
+        <classes>
+
+            <class name="Tests.WelcomeScreen.WelcomeScreenTests" />
+            <class name="Tests.WelcomeScreen.LoginScreenTests" />
+
+        </classes>
+    </test>
+
+    <test name="Real-Iphone 8 Plus" enabled="false">
+        <parameter name="device" value="R-Iphone 8 Plus" />
+
+        <classes>
+
+            <class name="Tests.WelcomeScreen.WelcomeScreenTests" />
+            <class name="Tests.WelcomeScreen.LoginScreenTests" />
+
+        </classes>
+    </test>
+
+</suite>
