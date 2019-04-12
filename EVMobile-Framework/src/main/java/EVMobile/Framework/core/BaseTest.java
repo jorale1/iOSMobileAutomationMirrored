@@ -15,8 +15,9 @@ import java.net.URL;
 public class BaseTest {
 
     private IOSDriver driver;
-    // TODO: replace this variable by environment variable
-    private static final String IOS_BASE_PATH= "/Users/jacosta/develop/ios-deployed-app/EagleView.app";
+    private static final String IOS_APP_PATH =  System.getenv("IOS_APP_PATH");
+    private static final String APPIUM_SERVER_HUB_URL = System.getenv("APPIUM_SERVER_HUB_URL");
+
 
     @Parameters("device")
     @BeforeMethod
@@ -27,16 +28,16 @@ public class BaseTest {
             cap = new DesiredCapabilities();
             cap.setCapability("deviceName", "iPhone X");
             cap.setCapability("platformVersion", "12.1");
-            cap.setCapability("app", IOS_BASE_PATH);
-            driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+            cap.setCapability("app", IOS_APP_PATH);
+            driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
         } else if (device.equalsIgnoreCase("S-Iphone 6")) {
             DesiredCapabilities cap;
             cap = new DesiredCapabilities();
             cap.setCapability("deviceName", "iPhone 6");
             cap.setCapability("platformVersion", "12.1");
-            cap.setCapability("app", IOS_BASE_PATH);
-            driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+            cap.setCapability("app", IOS_APP_PATH);
+            driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
         } else if (device.equalsIgnoreCase("R-Iphone 8 Plus")) {
             DesiredCapabilities cap;
@@ -49,8 +50,8 @@ public class BaseTest {
             cap.setCapability("platformName", "iOS");
             cap.setCapability("platformVersion", "12.1");
             cap.setCapability("startIWDP", true);
-            cap.setCapability("app", IOS_BASE_PATH);
-            driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+            cap.setCapability("app", IOS_APP_PATH);
+            driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
         }
     }
 
