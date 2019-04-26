@@ -23,7 +23,7 @@ public class LoginScreen extends BasePage {
     @FindBy(name = "signInViewController.password")
     public WebElement loginPassword;
 
-    @FindBy(name = "Forgot your Password?")
+    @FindBy(name = "signInViewController.forgotPassword")
     public WebElement forgotPassword;
 
     @FindBy(name = "Done")
@@ -60,6 +60,11 @@ public class LoginScreen extends BasePage {
         loginDone.click();
         dismiss.click();
         return new WelcomeScreen(driver);
+    }
+
+    public ResetPasswordScreen navigateToResetPassword() throws AWTException {
+        forgotPassword.click();
+        return new ResetPasswordScreen(driver);
     }
 
     public void isKeyboardDisplayed() throws AWTException {
