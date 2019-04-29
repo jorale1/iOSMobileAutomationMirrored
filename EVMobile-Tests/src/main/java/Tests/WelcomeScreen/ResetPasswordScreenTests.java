@@ -52,7 +52,6 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 5)
-
     public void testNavigateBackToLoginScreen() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -62,7 +61,6 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 6)
-
     public void testEmailFieldIsReset() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -75,7 +73,6 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 7)
-
     public void testCustomerServiceEmailLink() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -86,7 +83,6 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 8)
-
     public void testTermsofUseLink() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -98,7 +94,6 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 9)
-
     public void testPrivacyPolicyLink() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -110,7 +105,6 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 10)
-
     public void testEVLogoIsPresent() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();

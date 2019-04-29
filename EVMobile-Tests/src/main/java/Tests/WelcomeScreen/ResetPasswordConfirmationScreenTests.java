@@ -11,7 +11,6 @@ import static java.lang.Thread.sleep;
 public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
 
     @Test(priority = 1)
-
     public void testNavigateBackToResetPasswordScreen() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -24,7 +23,6 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 2)
-
     public void testEmailFieldIsKept() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -37,7 +35,6 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 3)
-
     public void testContactPhoneLink() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -50,7 +47,6 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 4)
-
     public void testTermsofUseLink() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -63,7 +59,6 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 5)
-
     public void testPrivacyPolicyLink() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
@@ -76,7 +71,6 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
     }
 
     @Test(priority = 6)
-
     public void testEVLogoIsPresent() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
