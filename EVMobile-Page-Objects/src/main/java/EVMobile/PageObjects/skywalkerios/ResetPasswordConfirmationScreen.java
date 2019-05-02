@@ -23,10 +23,10 @@ public class ResetPasswordConfirmationScreen extends BasePage {
     @FindBy(name = "1-866-659-8439")
     public WebElement contactPhone;
 
-    @FindBy(name = "resetPasswordConfirmationViewController.termsOfUse")
+    @FindBy(name = "termsOfUse")
     public WebElement confirmationTermsOfUseLink;
 
-    @FindBy(name = "resetPasswordConfirmationViewController.privacyPolicy")
+    @FindBy(name = "privacyPolicy")
     public WebElement confirmationPrivacyPolicyLink;
 
     public ResetPasswordConfirmationScreen(IOSDriver driver) {

@@ -42,7 +42,7 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
         ResetPasswordConfirmationScreen resetPasswordConfirmationScreen = resetPasswordScreen.navigateToResetPasswordConfirmationScreen();
         sleep(1000);
         ExternalMessageScreen externalMessageScreen = resetPasswordConfirmationScreen.navigateToExternalMessageScreen();
-        sleep(1000);
+        sleep(2000);
         Assert.assertTrue(externalMessageScreen.screenTitle.isEnabled());
     }
 
@@ -52,8 +52,9 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
         sleep(1000);
         ResetPasswordConfirmationScreen resetPasswordConfirmationScreen = resetPasswordScreen.navigateToResetPasswordConfirmationScreen();
-        TermsofUse termsofUse = resetPasswordConfirmationScreen.navigateToTermsofUseScreen();
         sleep(1000);
+        TermsofUse termsofUse = resetPasswordConfirmationScreen.navigateToTermsofUseScreen();
+        sleep(2000);
         Assert.assertTrue(termsofUse.termsDone.isDisplayed());
         Assert.assertTrue(termsofUse.TermsUrl.getAttribute("value").contains("my.eagleview.com"));
     }
@@ -64,8 +65,9 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
         sleep(1000);
         ResetPasswordConfirmationScreen resetPasswordConfirmationScreen = resetPasswordScreen.navigateToResetPasswordConfirmationScreen();
-        PrivacyPolicy privacyPolicy = resetPasswordConfirmationScreen.navigateToPrivacyPolicyScreen();
         sleep(1000);
+        PrivacyPolicy privacyPolicy = resetPasswordConfirmationScreen.navigateToPrivacyPolicyScreen();
+        sleep(2000);
         Assert.assertTrue(privacyPolicy.privacyPolicyDone.isDisplayed());
         Assert.assertTrue(privacyPolicy.url.getAttribute("value").contains("eagleview.com"));
     }
@@ -75,6 +77,8 @@ public class ResetPasswordConfirmationScreenTests extends BaseMobileTest {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
         sleep(1000);
-        Assert.assertTrue(resetPasswordScreen.eagelviewLogo.isEnabled());
+        ResetPasswordConfirmationScreen resetPasswordConfirmationScreen = resetPasswordScreen.navigateToResetPasswordConfirmationScreen();
+        sleep(1000);
+        Assert.assertTrue(resetPasswordConfirmationScreen.successMessage.isEnabled());
     }
 }
