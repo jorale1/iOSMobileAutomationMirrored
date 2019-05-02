@@ -88,7 +88,7 @@ public class ResetPasswordScreenTests extends BaseMobileTest {
         ResetPasswordScreen resetPasswordScreen = loginscreen.navigateToResetPassword();
         sleep(1000);
         TermsofUse termsofUse = resetPasswordScreen.navigateToTermsofUseScreen();
-        sleep(1000);
+        sleep(2000);
         Assert.assertTrue(termsofUse.termsDone.isDisplayed());
         Assert.assertTrue(termsofUse.TermsUrl.getAttribute("value").contains("my.eagleview.com"));
     }

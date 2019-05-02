@@ -34,10 +34,10 @@ public class ResetPasswordScreen extends BasePage {
     @FindBy(name = "Email unavailable")
     public WebElement emailUnavailableSimulator;
 
-    @FindBy(name = "resetPasswordViewController.termsOfUse")
+    @FindBy(name = "termsOfUse")
     public WebElement termsOfUseLink;
 
-    @FindBy(name = "resetPasswordViewController.privacyPolicy")
+    @FindBy(name = "privacyPolicy")
     public WebElement privacyPolicyLink;
 
     public String email = "jorge.acosta@eagleview.com";
@@ -57,7 +57,7 @@ public class ResetPasswordScreen extends BasePage {
         return new WelcomeScreen(driver);
     }
 
-    public ResetPasswordConfirmationScreen navigateToResetPasswordConfirmationScreen() throws AWTException {
+    public ResetPasswordConfirmationScreen navigateToResetPasswordConfirmationScreen() throws AWTException, InterruptedException {
         enterEmail(email);
         done.click();
         submitButton.click();
