@@ -9,18 +9,17 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.ResetPasswordConfirmationScreenTests" />
+            <class name="Tests.WelcomeScreen.SettingsScreenTestsiPhoneX" />
 
         </classes>
     </test>
 
-    <test name="Simulator-Iphone 6" enabled="false">
+    <test name="Simulator-Iphone 6" enabled="true">
         <parameter name="device" value="S-iPhone 6" />
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.WelcomeScreenTests" />
-            <class name="Tests.WelcomeScreen.LoginScreenTests" />
+            <class name="Tests.WelcomeScreen.SettingsScreenTestsiPhone6" />
 
         </classes>
     </test>

@@ -12,8 +12,16 @@ public class DashBoard extends BasePage {
     @FindBy(name = "EagleView.DashboardView")
     public WebElement dashboardForm;
 
+    @FindBy(name = "Settings")
+    public WebElement settingsButton;
+
     public DashBoard(IOSDriver driver) {
             super(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public SettingsScreen navigatetoSettingsScreen() throws InterruptedException {
+        settingsButton.click();
+        return new SettingsScreen(driver);
     }
 }

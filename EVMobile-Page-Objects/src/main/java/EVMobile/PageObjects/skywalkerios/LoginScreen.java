@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.awt.*;
 
 public class LoginScreen extends BasePage {
@@ -47,7 +48,6 @@ public class LoginScreen extends BasePage {
     }
 
     public DashBoard navigateToDashboard() throws AWTException {
-
         enterCredentials(email, password);
         loginDone.click();
         login.click();
@@ -55,20 +55,18 @@ public class LoginScreen extends BasePage {
     }
 
     public WelcomeScreen navigateBacktoWelcome() throws AWTException {
-
         enterCredentials(email, password);
         loginDone.click();
         dismiss.click();
         return new WelcomeScreen(driver);
     }
 
-    public ResetPasswordScreen navigateToResetPassword() throws AWTException {
+    public ResetPasswordScreen navigateToResetPassword() {
         forgotPassword.click();
         return new ResetPasswordScreen(driver);
     }
 
     public void isKeyboardDisplayed() throws AWTException {
-
         if (!driver.isKeyboardShown()) {
             String selectAll = Keys.chord(Keys.SHIFT, Keys.COMMAND, "k");
             driver.findElement(By.name("Welcome back")).sendKeys(selectAll);

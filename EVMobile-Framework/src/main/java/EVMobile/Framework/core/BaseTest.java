@@ -28,6 +28,7 @@ public class BaseTest {
             cap = new DesiredCapabilities();
             cap.setCapability("deviceName", "iPhone X");
             cap.setCapability("platformVersion", "12.1");
+            //cap.setCapability("autoAcceptAlerts", true);
             cap.setCapability("app", IOS_APP_PATH);
             driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
