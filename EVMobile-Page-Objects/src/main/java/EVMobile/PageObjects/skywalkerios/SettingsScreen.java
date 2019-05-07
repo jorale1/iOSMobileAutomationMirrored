@@ -78,8 +78,6 @@ public class SettingsScreen extends BasePage {
     @FindBy(name = "settingsViewController.signOutConfirmation.cancel")
     public WebElement cancelButton;
 
-
-
     public SettingsScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -94,7 +92,6 @@ public class SettingsScreen extends BasePage {
     }
 
     public void swapToLogOutLink(String device) {
-
         if (device.equalsIgnoreCase("S-Iphone X")) {
             TouchAction ta = new TouchAction(driver);
             ta.press(PointOption.point(181, 743)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(181, 232)).release().perform();
