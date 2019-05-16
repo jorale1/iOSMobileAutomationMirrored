@@ -4,7 +4,7 @@
 
 <suite name="Tests.WelcomeScreen" parallel="none">
 
-    <test name="Simulator-Iphone X" enabled="true">
+    <test name="Simulator-Iphone X" enabled="false">
         <parameter name="device" value="S-iPhone X" />
 
         <classes>

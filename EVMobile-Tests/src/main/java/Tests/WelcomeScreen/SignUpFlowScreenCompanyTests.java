@@ -1,6 +1,6 @@
 package Tests.WelcomeScreen;
 
-import EVMobile.PageObjects.skywalkerios.DashBoard;
+import EVMobile.PageObjects.skywalkerios.DashBoardScreen;
 import EVMobile.PageObjects.skywalkerios.SignUpFlowScreenCompany;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -229,7 +229,7 @@ public class SignUpFlowScreenCompanyTests extends BaseMobileTest {
         signUpFlowScreenCompany.selectState("Colorado");
         signUpFlowScreenCompany.createAccount.click();
         sleep(2000);
-        DashBoard dashBoard = new DashBoard(getDriver());
+        DashBoardScreen dashBoard = new DashBoardScreen(getDriver());
         sleep(5000);
         Assert.assertTrue(dashBoard.dashboardForm.isDisplayed());
     }

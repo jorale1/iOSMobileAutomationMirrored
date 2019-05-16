@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashBoard extends BasePage {
+public class DashBoardScreen extends BasePage {
 
 
     @FindBy(name = "EagleView.DashboardView")
@@ -15,12 +15,12 @@ public class DashBoard extends BasePage {
     @FindBy(name = "Settings")
     public WebElement settingsButton;
 
-    public DashBoard(IOSDriver driver) {
+    public DashBoardScreen(IOSDriver driver) {
             super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public SettingsScreen navigatetoSettingsScreen() throws InterruptedException {
+    public SettingsScreen navigatetoSettingsScreen() {
         settingsButton.click();
         return new SettingsScreen(driver);
     }

@@ -1,6 +1,6 @@
 package Tests.WelcomeScreen;
 
-import EVMobile.PageObjects.skywalkerios.DashBoard;
+import EVMobile.PageObjects.skywalkerios.DashBoardScreen;
 import EVMobile.PageObjects.skywalkerios.ResetPasswordScreen;
 import EVMobile.PageObjects.skywalkerios.WelcomeScreen;
 import EVMobile.PageObjects.skywalkerios.LoginScreen;
@@ -35,7 +35,7 @@ public class LoginScreenTests extends BaseMobileTest {
 
     public void testLoginvalidcredentials() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
-        DashBoard dashboard = loginscreen.navigateToDashboard();
+        DashBoardScreen dashboard = loginscreen.navigateToDashboard();
         sleep(8000);
         Assert.assertTrue(dashboard.dashboardForm.isDisplayed());
     }

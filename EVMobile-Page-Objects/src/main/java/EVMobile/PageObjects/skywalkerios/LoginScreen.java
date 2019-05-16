@@ -47,11 +47,11 @@ public class LoginScreen extends BasePage {
         loginPassword.sendKeys(password);
     }
 
-    public DashBoard navigateToDashboard() throws AWTException {
+    public DashBoardScreen navigateToDashboard() throws AWTException {
         enterCredentials(email, password);
         loginDone.click();
         login.click();
-        return new DashBoard(driver);
+        return new DashBoardScreen(driver);
     }
 
     public WelcomeScreen navigateBacktoWelcome() throws AWTException {

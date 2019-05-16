@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.*;
-
 public class ResetPasswordScreen extends BasePage {
 
     @FindBy(name = "resetPasswordViewController.dismiss")
@@ -42,7 +40,6 @@ public class ResetPasswordScreen extends BasePage {
 
     public String email = "jorge.acosta@eagleview.com";
 
-
     public ResetPasswordScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -57,7 +54,7 @@ public class ResetPasswordScreen extends BasePage {
         return new WelcomeScreen(driver);
     }
 
-    public ResetPasswordConfirmationScreen navigateToResetPasswordConfirmationScreen() throws AWTException, InterruptedException {
+    public ResetPasswordConfirmationScreen navigateToResetPasswordConfirmationScreen() {
         enterEmail(email);
         done.click();
         submitButton.click();
