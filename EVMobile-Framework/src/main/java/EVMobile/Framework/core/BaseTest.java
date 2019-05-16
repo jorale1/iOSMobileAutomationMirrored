@@ -58,7 +58,6 @@ public class BaseTest {
     @AfterMethod
     public void aftertest() {
         driver.resetApp();
-
         driver.quit();
     }
 

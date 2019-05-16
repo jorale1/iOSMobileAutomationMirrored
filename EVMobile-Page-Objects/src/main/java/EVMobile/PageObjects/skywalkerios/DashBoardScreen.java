@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashBoardScreen extends BasePage {
 
-
     @FindBy(name = "EagleView.DashboardView")
     public WebElement dashboardForm;
 
