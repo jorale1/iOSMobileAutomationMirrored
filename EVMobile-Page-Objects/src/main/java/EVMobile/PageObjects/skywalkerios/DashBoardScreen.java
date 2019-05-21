@@ -1,7 +1,9 @@
 package EVMobile.PageObjects.skywalkerios;
 
 import EVMobile.Framework.core.BasePage;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +17,7 @@ public class DashBoardScreen extends BasePage {
     public WebElement settingsButton;
 
     public DashBoardScreen(IOSDriver driver) {
-            super(driver);
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -23,4 +25,11 @@ public class DashBoardScreen extends BasePage {
         settingsButton.click();
         return new SettingsScreen(driver);
     }
-}
+
+    public OrderReportFlowScreenPropertyLocation navigateToOrderReportPropertyLocationScreen() throws InterruptedException {
+            TouchAction ta = new TouchAction(driver);
+            ta.tap(new PointOption().withCoordinates(170, 740)).perform();
+            return new OrderReportFlowScreenPropertyLocation(driver);
+        }
+    }
+
