@@ -95,7 +95,6 @@ public class OrderReportFlowScreenPropertyLocation extends BasePage {
         navigateToStartOrderReport();
         sleep(2000);
         currentLocationButton.click();
-
     }
 
     public void enterLocation(String validStreetUS, String cityUS, String validStateUS, String validZipUS) throws AWTException, InterruptedException {

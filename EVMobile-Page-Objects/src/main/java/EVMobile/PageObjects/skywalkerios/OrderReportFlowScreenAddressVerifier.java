@@ -26,8 +26,6 @@ public class OrderReportFlowScreenAddressVerifier extends BasePage {
     @FindBy(name = "Confirm")
     public WebElement confirmButton;
 
-
-
     public OrderReportFlowScreenAddressVerifier(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
