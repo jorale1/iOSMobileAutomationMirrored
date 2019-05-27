@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static java.lang.Thread.sleep;
+
 public class DashBoardScreen extends BasePage {
 
     @FindBy(name = "EagleView.DashboardView")
@@ -27,9 +29,10 @@ public class DashBoardScreen extends BasePage {
     }
 
     public OrderReportFlowScreenPropertyLocation navigateToOrderReportPropertyLocationScreen() throws InterruptedException {
-            TouchAction ta = new TouchAction(driver);
-            ta.tap(new PointOption().withCoordinates(170, 740)).perform();
-            return new OrderReportFlowScreenPropertyLocation(driver);
-        }
+        sleep(2000);
+        TouchAction ta = new TouchAction(driver);
+        ta.tap(new PointOption().withCoordinates(170, 740)).perform();
+        return new OrderReportFlowScreenPropertyLocation(driver);
     }
+}
 

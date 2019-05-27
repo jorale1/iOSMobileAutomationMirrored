@@ -36,7 +36,7 @@ public class OrderReportFlowScreenPropertyLocation extends BasePage {
     public WebElement zipCodeField;
 
     @FindBy(className = "XCUIElementTypePickerWheel")
-    public WebElement statePickerwheel;
+    public WebElement statePickerWheel;
 
     @FindBy(name = "Next")
     public WebElement statePickerNext;
@@ -50,8 +50,22 @@ public class OrderReportFlowScreenPropertyLocation extends BasePage {
     @FindBy(name = "signUpNameViewController.next")
     public WebElement nextButton;
 
-    @FindBy(name = "Next:")
+    @FindBy(name = "Done")
     public WebElement keyboardDone;
+
+    @FindBy(name = "Allow “EagleView” to access your location while you are using the app?")
+    public WebElement systemAllowLocationAccess;
+
+    @FindBy(name = "Don’t Allow")
+    public WebElement systemLocationDontAllow;
+
+    @FindBy(name = "Allow")
+    public WebElement systemLocationAllow;
+
+    public String validStreetUS;
+    public String cityUS;
+    public String validZipUS;
+    public String validStateUS;
 
     public OrderReportFlowScreenPropertyLocation(IOSDriver driver) {
         super(driver);
@@ -61,25 +75,46 @@ public class OrderReportFlowScreenPropertyLocation extends BasePage {
     public OrderReportFlowScreenPropertyLocation navigateToStartOrderReport() throws AWTException, InterruptedException {
         WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
-        sleep(1000);
+        sleep(2000);
         DashBoardScreen dashBoardScreen = loginscreen.navigateToDashboard();
         sleep(2000);
-        TouchAction ta = new TouchAction(driver);
-        ta.tap(new PointOption().withCoordinates(170, 755)).perform();
+        dashBoardScreen.navigateToOrderReportPropertyLocationScreen();
         sleep(2000);
         return new OrderReportFlowScreenPropertyLocation(driver);
     }
 
     public DashBoardScreen navigateBackToDashboardScreen() throws AWTException, InterruptedException {
-        WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
-        LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
-        sleep(1000);
-        DashBoardScreen dashBoardScreen = loginscreen.navigateToDashboard();
-        sleep(2000);
-        OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = dashBoardScreen.navigateToOrderReportPropertyLocationScreen();
+        navigateToStartOrderReport();
         sleep(2000);
         cancelButton.click();
         discardOrderButton.click();
         return new DashBoardScreen(driver);
+    }
+
+    public void allowLocationAccesModal() throws InterruptedException, AWTException {
+        navigateToStartOrderReport();
+        sleep(2000);
+        currentLocationButton.click();
+
+    }
+
+    public void enterLocation(String validStreetUS, String cityUS, String validStateUS, String validZipUS) throws AWTException, InterruptedException {
+        navigateToStartOrderReport();
+        sleep(2000);
+        streetField.sendKeys(validStreetUS);
+        cityField.sendKeys(cityUS);
+        selectStateFromStatePicker(validStateUS);
+        zipCodeField.sendKeys(validZipUS);
+    }
+
+    public void selectStateFromStatePicker(String optState) {
+        stateField.click();
+        statePickerWheel.sendKeys(optState);
+    }
+
+    public void clickOnNextbutton() throws InterruptedException {
+        sleep(2000);
+        TouchAction ta = new TouchAction(driver);
+        ta.tap(new PointOption().withCoordinates(295, 743)).perform();
     }
 }
