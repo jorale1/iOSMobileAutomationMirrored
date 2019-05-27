@@ -19,9 +19,8 @@ public class DashboardScreenTests extends BaseTest {
         WelcomeScreen welcomeScreen = new WelcomeScreen(getDriver());
         LoginScreen loginScreen = welcomeScreen.navigateToLoginScreen();
         DashBoardScreen dashBoardScreen = loginScreen.navigateToDashboard();
-        sleep(3000);
-        OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = dashBoardScreen.navigateToOrderReportPropertyLocationScreen();
         sleep(2000);
+        OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = dashBoardScreen.navigateToOrderReportPropertyLocationScreen();
         Assert.assertTrue(orderReportFlowScreenPropertyLocation.currentLocationButton.isEnabled());
     }
 
