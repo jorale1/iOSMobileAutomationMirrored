@@ -121,13 +121,12 @@ public class OrderReportFlowScreenPropertyLocationTests extends BaseMobileTest {
         OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = new OrderReportFlowScreenPropertyLocation(getDriver());
         orderReportFlowScreenPropertyLocation.enterLocation("1950 Meadowvale Blvd", "", "", "L5N8L9");
         orderReportFlowScreenPropertyLocation.keyboardDone.click();
-        orderReportFlowScreenPropertyLocation.keyboardDone.click();
         orderReportFlowScreenPropertyLocation.clickOnNextbutton();
         OrderReportFlowScreenAddressVerifier orderReportFlowScreenAddressVerifier = new OrderReportFlowScreenAddressVerifier(getDriver());
         sleep(2000);
         Assert.assertTrue(orderReportFlowScreenAddressVerifier.legalLink.isEnabled());
     }
-    @Test(priority = 13)
+    @Test(priority = 13) @Ignore
     public void testEnteringStreetCityStateThenZIPISNotRequiredCanada() throws InterruptedException, AWTException {
         OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = new OrderReportFlowScreenPropertyLocation(getDriver());
         orderReportFlowScreenPropertyLocation.enterLocation("1950 Meadowvale Blvd", "Mississagua", "Ontario", "");
