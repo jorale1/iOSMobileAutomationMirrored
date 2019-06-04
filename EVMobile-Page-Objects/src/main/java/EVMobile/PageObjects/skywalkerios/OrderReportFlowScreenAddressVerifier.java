@@ -39,7 +39,6 @@ public class OrderReportFlowScreenAddressVerifier extends BasePage {
     public String accountWithNoPreexistingOrders = "jorge.acosta@endava.com";
     public String password = "EagleView1";
 
-
     public OrderReportFlowScreenAddressVerifier(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
