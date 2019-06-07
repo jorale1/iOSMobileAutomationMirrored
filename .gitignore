@@ -2,21 +2,21 @@
 .idea/
 *.iml
 app/*
-EVMobile-Tests/app/
+EVMobile-tests/app/
 *.html
 *.class
 
 #node
-EVMobile-Tests/src/test/node_modules/
-EVMobile-Tests/src/test/node/
-EVMobile-Tests/src/test/package-lock.json
+EVMobile-tests/src/test/node_modules/
+EVMobile-tests/src/test/node/
+EVMobile-tests/src/test/package-lock.json
 
 #maven plugins
-EVMobile-Tests/target/EVMobile-Tests-1.0-SNAPSHOT.jar
-EVMobile-Tests/target/failsafe-reports/
-EVMobile-Tests/target/maven-archiver/
-EVMobile-Tests/target/maven-status/
-EVMobile-Tests/target/surefire-reports/
+EVMobile-tests/target/EVMobile-tests-1.0-SNAPSHOT.jar
+EVMobile-tests/target/failsafe-reports/
+EVMobile-tests/target/maven-archiver/
+EVMobile-tests/target/maven-status/
+EVMobile-tests/target/surefire-reports/
 EVMobile-Domain/target/
 EVMobile-Framework/target/EVMobile-Framework-1.0-SNAPSHOT.jar
 EVMobile-Framework/target/maven-archiver/
@@ -24,7 +24,7 @@ EVMobile-Framework/target/maven-status/
 EVMobile-Page-Objects/target/EVMobile-Page-Objects-1.0-SNAPSHOT.jar
 EVMobile-Page-Objects/target/maven-archiver/
 EVMobile-Page-Objects/target/maven-status/
-EVMobile-Tests/target/classes/META-INF/
+EVMobile-tests/target/classes/META-INF/
 EVMobile-Page-Objects/target/classes/META-INF/
 
 

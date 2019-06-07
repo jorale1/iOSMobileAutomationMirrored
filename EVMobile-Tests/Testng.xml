@@ -2,14 +2,14 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Tests.WelcomeScreen" parallel="none">
+<suite name="tests.WelcomeScreen" parallel="none">
 
     <test name="Simulator-Iphone X" enabled="true">
         <parameter name="device" value="S-iPhone X" />
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.OrderReportFlowScreenPropertyLocationTests" />
+            <class name="tests.order.OrderReportFlowScreenPropertyLocationScreenTests" />
 
         </classes>
     </test>
@@ -19,7 +19,7 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.DashboardScreenTests" />
+            <class name="tests.dashboard.DashboardScreenTests" />
 
         </classes>
     </test>
@@ -29,8 +29,8 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.WelcomeScreenTests" />
-            <class name="Tests.WelcomeScreen.LoginScreenTests" />
+            <class name="tests.WelcomeScreenTests" />
+            <class name="tests.login.LoginScreenTests" />
 
         </classes>
     </test>
