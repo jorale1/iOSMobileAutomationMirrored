@@ -46,7 +46,6 @@ public class OrderReportFlowScreenStructureClassificationPickerView extends Base
         ta.tap(new PointOption().withCoordinates(295, 743)).perform();
     }
 
-
     public OrderReportFlowScreenStructureClassificationPickerView navigateToSelectStructureScreen() throws AWTException, InterruptedException {
         OrderReportFlowScreenAddressVerifier orderReportFlowScreenAddressVerifier = new OrderReportFlowScreenAddressVerifier(driver);
         orderReportFlowScreenAddressVerifier.enterOrderAccountWithNoPreexistingOrders();
