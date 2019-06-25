@@ -12,7 +12,6 @@ public class OrderReportFlowProductPickerViewResidentialAddOnTests extends BaseM
     public void testnoAddOnReportCheckedOption() throws InterruptedException, AWTException {
         OrderReportFlowProductResidentialAddOnProductPickerScreen orderReportFlowProductResidentialAddOnProductPickerScreen = new OrderReportFlowProductResidentialAddOnProductPickerScreen(getDriver());
         orderReportFlowProductResidentialAddOnProductPickerScreen.navigateToSelectAddOnScreen();
-        //sleep(2000);
         Assert.assertTrue(orderReportFlowProductResidentialAddOnProductPickerScreen.pageTitle.isEnabled());
     }
 
