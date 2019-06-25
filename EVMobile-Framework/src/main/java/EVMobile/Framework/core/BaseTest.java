@@ -3,10 +3,7 @@ package EVMobile.Framework.core;
 
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,7 +24,7 @@ public class BaseTest {
             DesiredCapabilities cap;
             cap = new DesiredCapabilities();
             cap.setCapability("deviceName", "iPhone X");
-            cap.setCapability("platformVersion", "12.1");
+            cap.setCapability("platformVersion", "12.2");
             cap.setCapability("app", IOS_APP_PATH);
             driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
@@ -35,7 +32,7 @@ public class BaseTest {
             DesiredCapabilities cap;
             cap = new DesiredCapabilities();
             cap.setCapability("deviceName", "iPhone 6");
-            cap.setCapability("platformVersion", "12.1");
+            cap.setCapability("platformVersion", "12.2");
             cap.setCapability("app", IOS_APP_PATH);
             driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
@@ -55,7 +52,7 @@ public class BaseTest {
         }
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void aftertest() {
         driver.resetApp();
         driver.quit();
