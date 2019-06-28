@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.awt.*;
+
 import static java.lang.Thread.sleep;
 
 public class OrderReportFlowProductResidentialWallsMeasurementScopePickerScreen extends BasePage {
@@ -45,6 +47,9 @@ public class OrderReportFlowProductResidentialWallsMeasurementScopePickerScreen 
     @FindBy(name = "Continue Placing Order")
     public WebElement continuePlacingOrderButton;
 
+    @FindBy(name = "Done")
+    public WebElement keyboardDone;
+
     public OrderReportFlowProductResidentialWallsMeasurementScopePickerScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -54,5 +59,53 @@ public class OrderReportFlowProductResidentialWallsMeasurementScopePickerScreen 
         sleep(2000);
         TouchAction ta = new TouchAction(driver);
         ta.tap(new PointOption().withCoordinates(295, 743)).perform();
+    }
+
+    public OrderReportFlowProductResidentialWallsMeasurementScopePickerScreen navigateFromDeliveryProducToMeasurementstScreen() throws AWTException, InterruptedException {
+        OrderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen orderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen = new OrderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen(driver);
+        orderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen.navigateToWallsMeasurementsPickerScreen(orderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen.regularDeliveryOption);
+        return new OrderReportFlowProductResidentialWallsMeasurementScopePickerScreen(driver);
+    }
+
+    public DashBoardScreen cancelDiscardOrder() throws AWTException, InterruptedException {
+        navigateFromDeliveryProducToMeasurementstScreen();
+        sleep(2000);
+        cancelButton.click();
+        discardOrderButton.click();
+        sleep(2000);
+        return new DashBoardScreen(driver);
+    }
+
+    public void cancelContinueWithOrder() throws AWTException, InterruptedException {
+        navigateFromDeliveryProducToMeasurementstScreen();
+        sleep(2000);
+        cancelButton.click();
+        continuePlacingOrderButton.click();
+        sleep(2000);
+    }
+
+    public OrderReportFlowOrderDetailsViewScreen navigateToOrderDetailsScreen(WebElement structureMeasure) throws AWTException, InterruptedException {
+        navigateFromDeliveryProducToMeasurementstScreen();
+        sleep(2000);
+        structureMeasure.click();
+        clickOnNextbutton();
+        sleep(2000);
+        return new OrderReportFlowOrderDetailsViewScreen(driver);
+    }
+
+    public void specialInstructionisEnabled() throws AWTException, InterruptedException {
+        navigateFromDeliveryProducToMeasurementstScreen();
+        sleep(2000);
+        specialInstructionsTextBox.sendKeys("test");
+        keyboardDone.click();
+        sleep(2000);
+    }
+
+    public OrderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen navigateBackToDeliveryProductPickerScreen() throws AWTException, InterruptedException {
+        navigateFromDeliveryProducToMeasurementstScreen();
+        sleep(2000);
+        backButton.click();
+        sleep(2000);
+        return new OrderReportFlowProductResidentialSunsiteDeliveryProductPickerScreen(driver);
     }
 }
