@@ -9,7 +9,7 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.OrderReportFlowProductResidentialPremiumDeliveryPickerTests" />
+            <class name="Tests.WelcomeScreen.OrderReportFlowProductResidentialPremiumRegularMeasurementsPickerTests" />
 
         </classes>
     </test>
