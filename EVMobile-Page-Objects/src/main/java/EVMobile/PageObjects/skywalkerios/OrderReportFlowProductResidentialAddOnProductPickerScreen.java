@@ -23,6 +23,9 @@ public class OrderReportFlowProductResidentialAddOnProductPickerScreen extends B
     @FindBy(name = "Would you like to add another report?")
     public WebElement pageTitle;
 
+    @FindBy(name = "Select add-on")
+    public WebElement editPageTitle;
+
     @FindBy(name = "No Add-on Report")
     public WebElement noAddOnReport;
 
