@@ -1,10 +1,16 @@
 package EVMobile.PageObjects.skywalkerios;
 
 import EVMobile.Framework.core.BasePage;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.awt.*;
+
+import static java.lang.Thread.sleep;
 
 public class OrderReportFlowProductResidentialOrderSubmittedScreen extends BasePage {
 
@@ -17,35 +23,29 @@ public class OrderReportFlowProductResidentialOrderSubmittedScreen extends BaseP
     @FindBy(name = "An order confirmation has been sent to your email")
     public WebElement pageSubtitle;
 
-    @FindBy(name = "Delivery")
-    public WebElement deliveryLink;
-
-    @FindBy(name = "Structures")
-    public WebElement structuresLink;
-
-    @FindBy(name = "Billing Information")
-    public WebElement billingInfoSectionTitle;
-
-    @FindBy(name = "Add Payment")
-    public WebElement addPaymentLink;
-
-    @FindBy(name = "Add Promo Code")
-    public WebElement addPromoCodeLink;
-
-    @FindBy(name = "Total")
-    public WebElement totalSection;
-
-    @FindBy(name = "Discard Order")
-    public WebElement discardOrderButton;
-
-    @FindBy(name = "Continue Placing Order")
-    public WebElement continuePlacingOrderButton;
-
-    @FindBy(name = "Done")
-    public WebElement keyboardDone;
-
     public OrderReportFlowProductResidentialOrderSubmittedScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public void clickOnOKButton() throws InterruptedException {
+        sleep(2000);
+        TouchAction ta = new TouchAction(driver);
+        ta.tap(new PointOption().withCoordinates(180, 750)).perform();
+    }
+
+    public OrderReportFlowProductResidentialOrderSubmittedScreen navigateFromCheckOuttoOrderSubmittedScreen() throws AWTException, InterruptedException {
+        OrderReportFlowCheckOutViewScreen orderReportFlowCheckOutViewScreen = new OrderReportFlowCheckOutViewScreen(driver);
+        orderReportFlowCheckOutViewScreen.navigatetoOrderSubmittedScreen();
+        sleep(2000);
+        return new OrderReportFlowProductResidentialOrderSubmittedScreen(driver);
+    }
+
+    public DashBoardScreen confirmOrderAndBackToDashboard () throws AWTException, InterruptedException {
+        navigateFromCheckOuttoOrderSubmittedScreen();
+        sleep(2000);
+        clickOnOKButton();
+        sleep(2000);
+        return new DashBoardScreen(driver);
     }
 }
