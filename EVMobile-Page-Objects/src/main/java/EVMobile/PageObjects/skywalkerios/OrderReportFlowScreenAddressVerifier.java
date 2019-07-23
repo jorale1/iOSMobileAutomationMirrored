@@ -36,7 +36,7 @@ public class OrderReportFlowScreenAddressVerifier extends BasePage {
     @FindBy(name = "Continue Placing Order")
     public WebElement continuePlacingOrderButton;
 
-    public String accountWithNoPreexistingOrders = "jorge.acosta@endava.com";
+    public String accountWithNoPreexistingOrders = "jq32772+construction2@gmail.com";
     public String password = "EagleView1";
 
     public OrderReportFlowScreenAddressVerifier(IOSDriver driver) {
