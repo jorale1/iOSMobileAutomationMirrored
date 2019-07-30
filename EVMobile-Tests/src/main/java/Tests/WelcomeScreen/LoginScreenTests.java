@@ -40,7 +40,7 @@ public class LoginScreenTests extends BaseMobileTest {
         Assert.assertTrue(dashboard.dashboardForm.isDisplayed());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4) @Ignore
 
     public void testNavigateToResetPasswordScreen() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();

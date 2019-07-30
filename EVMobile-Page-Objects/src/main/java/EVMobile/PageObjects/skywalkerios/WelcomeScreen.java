@@ -48,6 +48,33 @@ public class WelcomeScreen extends BasePage {
     @FindBy(name = "welcomePageViewController.page2.body")
     public WebElement page2body;
 
+    @FindBy(name = "Choose Environment")
+    public WebElement chooseEnvironmentModal;
+
+    @FindBy(name = "Choose Environment")
+    public WebElement chooseEnvironmentPageTitle;
+
+    @FindBy(name = "The currently selected environment is Production.")
+    public WebElement chooseEnvironmentSubtitle;
+
+    @FindBy(name = "Mocks (Internal)")
+    public WebElement mockEnvironment;
+
+    @FindBy(name = "Test (Internal)")
+    public WebElement testInternalEnvironmebnt;
+
+    @FindBy(name = "Stage (Internal)")
+    public WebElement stageInternalEnvironment;
+
+    @FindBy(name = "Stage")
+    public WebElement stageEnvironment;
+
+    @FindBy(name = "Production")
+    public WebElement productionEnvironment;
+
+    @FindBy(name = "Cancel")
+    public WebElement cancelEnvSelector;
+
 
     public WelcomeScreen(IOSDriver driver) {
         super(driver);

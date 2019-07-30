@@ -16,10 +16,10 @@ public class BaseTest {
     private static final String APPIUM_SERVER_HUB_URL = System.getenv("APPIUM_SERVER_HUB_URL");
 
 
-    @Parameters("device")
+    @Parameters({"environment", "device"})
     @BeforeMethod
 
-    public void setUp(@Optional("S-Iphone 6") String device) throws MalformedURLException {
+    public void setUp(@Optional("Stage") String environment, @Optional("S-Iphone 6") String device) throws MalformedURLException {
         if (device.equalsIgnoreCase("S-Iphone X")) {
             DesiredCapabilities cap;
             cap = new DesiredCapabilities();
