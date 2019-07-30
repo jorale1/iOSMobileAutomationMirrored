@@ -70,7 +70,7 @@ public class OrderReportFlowProductResidentialBillingInformationTests extends Ba
     public void testInvalidPhoneNumberMaxLength() throws InterruptedException, AWTException {
         OrderReportFlowBillingInformationScreen orderReportFlowBillingInformationScreen = new OrderReportFlowBillingInformationScreen(getDriver());
         orderReportFlowBillingInformationScreen.phoneNumberValidation("123456789123");
-        Assert.assertTrue(orderReportFlowBillingInformationScreen.invalidCardMessage.isEnabled()); //FAILING CREATE TICKET, NO MAX VALIDATED, ALSO WHEN ENTERING TO EDIT USER NEEDS TO RE-ENTER CC NUMBER
+        Assert.assertTrue(orderReportFlowBillingInformationScreen.invalidCardMessage.isEnabled());
     }
 
     @Test(priority = 10) @Ignore

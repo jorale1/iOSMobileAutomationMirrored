@@ -6,10 +6,11 @@
 
     <test name="Simulator-Iphone X" enabled="true">
         <parameter name="device" value="S-iPhone X" />
+        <parameter name="environment" value="Stage" />
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.OrderReportFlowProductResidentialBillingInformationTests" />
+            <class name="Tests.WelcomeScreen.LoginScreenTests" />
 
         </classes>
     </test>
