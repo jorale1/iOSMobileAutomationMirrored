@@ -14,7 +14,7 @@ import static java.lang.Thread.sleep;
 
 public class LoginScreenTests extends BaseMobileTest {
 
-    @Test(priority = 1)
+    @Test(priority = 1) @Ignore
 
     public void testLogin() {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
@@ -31,7 +31,7 @@ public class LoginScreenTests extends BaseMobileTest {
         Assert.assertTrue(welcomescreen.loginlink.isDisplayed());
     }
 
-    @Test(priority = 3) @Ignore
+    @Test(priority = 3)
 
     public void testLoginvalidcredentials() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();

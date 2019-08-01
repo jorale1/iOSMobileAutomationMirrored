@@ -11,7 +11,7 @@ import java.net.URL;
 
 public class BaseTest {
 
-    private IOSDriver driver;
+    //private IOSDriver driver;
     private static final String IOS_APP_PATH =  System.getenv("IOS_APP_PATH");
     private static final String APPIUM_SERVER_HUB_URL = System.getenv("APPIUM_SERVER_HUB_URL");
 
@@ -26,7 +26,7 @@ public class BaseTest {
             cap.setCapability("deviceName", "iPhone X");
             cap.setCapability("platformVersion", "12.2");
             cap.setCapability("app", IOS_APP_PATH);
-            driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
+            AppiumUtils.currentWebDriver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
         } else if (device.equalsIgnoreCase("S-Iphone 6")) {
             DesiredCapabilities cap;
@@ -34,7 +34,7 @@ public class BaseTest {
             cap.setCapability("deviceName", "iPhone 6");
             cap.setCapability("platformVersion", "12.2");
             cap.setCapability("app", IOS_APP_PATH);
-            driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
+            AppiumUtils.currentWebDriver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
 
         } else if (device.equalsIgnoreCase("R-Iphone 8 Plus")) {
             DesiredCapabilities cap;
@@ -48,17 +48,17 @@ public class BaseTest {
             cap.setCapability("platformVersion", "12.1");
             cap.setCapability("startIWDP", true);
             cap.setCapability("app", IOS_APP_PATH);
-            driver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
+            AppiumUtils.currentWebDriver = new IOSDriver(new URL(APPIUM_SERVER_HUB_URL), cap);
         }
     }
 
     @AfterMethod(alwaysRun = true)
     public void aftertest() {
-        driver.resetApp();
-        driver.quit();
+        AppiumUtils.currentWebDriver.resetApp();
+        AppiumUtils.currentWebDriver.quit();
     }
 
     public IOSDriver getDriver() {
-        return driver;
+        return AppiumUtils.currentWebDriver;
     }
 }
