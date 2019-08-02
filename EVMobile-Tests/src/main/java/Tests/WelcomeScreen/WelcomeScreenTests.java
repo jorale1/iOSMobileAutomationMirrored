@@ -1,14 +1,13 @@
 package Tests.WelcomeScreen;
 
-import EVMobile.Framework.core.BaseTest;
-import EVMobile.PageObjects.skywalkerios.WelcomeScreen;
 import EVMobile.PageObjects.skywalkerios.SignUpFlowScreenStart;
+import EVMobile.PageObjects.skywalkerios.WelcomeScreen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
 
-public class WelcomeScreenTests extends BaseTest {
+public class WelcomeScreenTests extends BaseMobileTest {
 
     @Test
     public void welcomeScreenTests() {

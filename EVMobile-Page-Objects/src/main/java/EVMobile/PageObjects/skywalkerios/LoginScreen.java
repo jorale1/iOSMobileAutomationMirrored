@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
 
+import static java.lang.Thread.sleep;
+
 public class LoginScreen extends BasePage {
 
     @FindBy(name = "signInViewController.dismiss")
@@ -33,12 +35,19 @@ public class LoginScreen extends BasePage {
     @FindBy(name = "signInViewController.signIn")
     public WebElement login;
 
-    public String email = "jorge.acosta@eagleview.com";
+    public String email = "acosta.a.jorge+construction3@gmail.com";
     public String password = "EagleView1";
 
     public LoginScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public LoginScreen navigateFromWelcomeToLoginScreen() throws AWTException, InterruptedException {
+        WelcomeScreen welcomeScreen =  new WelcomeScreen(driver);
+        welcomeScreen.navigateToLoginScreen();
+        sleep(2000);
+        return new LoginScreen(driver);
     }
 
     public void enterCredentials(String email, String password) throws AWTException {
@@ -47,21 +56,27 @@ public class LoginScreen extends BasePage {
         loginPassword.sendKeys(password);
     }
 
-    public DashBoardScreen navigateToDashboard() throws AWTException {
+    public DashBoardScreen navigateToDashboard() throws AWTException, InterruptedException {
+        navigateFromWelcomeToLoginScreen();
+        sleep(2000);
         enterCredentials(email, password);
         loginDone.click();
         login.click();
         return new DashBoardScreen(driver);
     }
 
-    public WelcomeScreen navigateBacktoWelcome() throws AWTException {
+    public WelcomeScreen navigateBacktoWelcome() throws AWTException, InterruptedException {
+        navigateFromWelcomeToLoginScreen();
+        sleep(2000);
         enterCredentials(email, password);
         loginDone.click();
         dismiss.click();
         return new WelcomeScreen(driver);
     }
 
-    public ResetPasswordScreen navigateToResetPassword() {
+    public ResetPasswordScreen navigateToResetPassword() throws InterruptedException, AWTException {
+        navigateFromWelcomeToLoginScreen();
+        sleep(2000);
         forgotPassword.click();
         return new ResetPasswordScreen(driver);
     }

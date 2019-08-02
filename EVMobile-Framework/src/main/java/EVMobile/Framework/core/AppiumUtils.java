@@ -23,10 +23,9 @@ public class AppiumUtils {
             action = action.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(amountOfSeconds)));
         }
         action.release().perform();
-
     }
 
-    public static void performTouch(WebElement element){
+    public static void performTouch(WebElement element) {
         performTouch(element, 0);
     }
 }

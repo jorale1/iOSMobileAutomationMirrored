@@ -1,9 +1,8 @@
 package Tests.WelcomeScreen;
 
-import EVMobile.Framework.core.BaseTest;
 import org.testng.annotations.Test;
 
-public class SearchScreenTests extends BaseTest {
+public class SearchScreenTests extends BaseMobileTest {
 
     @Test
     public void testSearch() {

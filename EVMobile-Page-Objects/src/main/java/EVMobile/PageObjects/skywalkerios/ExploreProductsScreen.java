@@ -23,6 +23,9 @@ public class ExploreProductsScreen extends BasePage {
     @FindBy(name = "SITE MENU")
     public WebElement siteMenu;
 
+    @FindBy(name = "SFSafariView")
+    public WebElement navitationBar;
+
     public ExploreProductsScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

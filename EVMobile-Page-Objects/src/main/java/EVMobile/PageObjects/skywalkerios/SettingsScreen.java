@@ -120,11 +120,11 @@ public class SettingsScreen extends BasePage {
         return new ContactInformationScreen(driver);
     }
 
-    public QuoteSetupFlowScreenSetup navigateToQuoteSetpFlowScreenSetup() throws AWTException, InterruptedException {
+    public QuoteSetupFlowTemplateLandingScreen navigateToQuoteSetpFlowScreenSetup() throws AWTException, InterruptedException {
         navigateToStartTesting();
         sleep(2000);
         quoteSettingsLink.click();
-        return new QuoteSetupFlowScreenSetup(driver);
+        return new QuoteSetupFlowTemplateLandingScreen(driver);
     }
 
     public QuoteSetupFlowScreenQuoteSettings navigateToQuoteSetpFlowScreenQuoteSettings() throws AWTException, InterruptedException {

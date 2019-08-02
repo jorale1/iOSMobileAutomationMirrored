@@ -20,8 +20,8 @@ public class SettingsScreenTestsGeneral extends BaseMobileTest {
     @Test(priority = 2)
     public void testNavigateToQuoteSettingsSetupNowScreen() throws InterruptedException, AWTException {
         SettingsScreen settingsScreen = new SettingsScreen(getDriver());
-        QuoteSetupFlowScreenSetup quoteSetupFlowScreenSetup = settingsScreen.navigateToQuoteSetpFlowScreenSetup();
-        Assert.assertTrue(quoteSetupFlowScreenSetup.quoteMachineImage.isEnabled());
+        QuoteSetupFlowTemplateLandingScreen quoteSetupFlowTemplateLandingScreen = settingsScreen.navigateToQuoteSetpFlowScreenSetup();
+        Assert.assertTrue(quoteSetupFlowTemplateLandingScreen.quoteMachineImage.isEnabled());
     }
 
     @Test(priority = 3)

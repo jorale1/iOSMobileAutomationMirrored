@@ -1,27 +1,67 @@
 package Tests.WelcomeScreen;
 
-import EVMobile.Framework.core.BaseTest;
-import EVMobile.PageObjects.skywalkerios.DashBoardScreen;
-import EVMobile.PageObjects.skywalkerios.LoginScreen;
-import EVMobile.PageObjects.skywalkerios.OrderReportFlowScreenPropertyLocation;
-import EVMobile.PageObjects.skywalkerios.WelcomeScreen;
+import EVMobile.PageObjects.skywalkerios.*;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 
-import static java.lang.Thread.sleep;
-
-public class DashboardScreenTests extends BaseTest {
+public class DashboardScreenTests extends BaseMobileTest {
 
     @Test(priority = 1)
-    public void navigateToStartTest() throws InterruptedException, AWTException {
-        WelcomeScreen welcomeScreen = new WelcomeScreen(getDriver());
-        LoginScreen loginScreen = welcomeScreen.navigateToLoginScreen();
-        DashBoardScreen dashBoardScreen = loginScreen.navigateToDashboard();
-        sleep(2000);
+    public void testNavigateToSearchScreen() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        SearchScreen searchScreen = dashBoardScreen.navigateToSearchScreen();
+        Assert.assertTrue(searchScreen.pageName.isEnabled());
+    }
+
+    @Test(priority = 2)
+    public void testNavigateToSettingsScreen() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        SettingsScreen settingsScreen = dashBoardScreen.navigatetoSettingsScreen();
+        Assert.assertTrue(settingsScreen.screenTitle.isEnabled());
+    }
+
+    @Test(priority = 3)
+    public void testCloseGetAutomaticQuotesForm() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        dashBoardScreen.closeSetUpNowAutomaticQuotes();
+        Assert.assertTrue(dashBoardScreen.welcomeFormViewReportTypesButton.isEnabled());
+    }
+
+    @Test(priority = 4)
+    public void testNavigateToQuoteTemplateLandingScreen() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        QuoteSetupFlowTemplateLandingScreen quoteSetupFlowTemplateLandingScreen = dashBoardScreen.navigateToQuoteTemplateLandingScreen();
+        Assert.assertTrue(quoteSetupFlowTemplateLandingScreen.quoteMachineImage.isEnabled());
+    }
+
+    @Test(priority = 5)
+    public void testNavigateToExploreProductsScreen() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        ExploreProductsScreen exploreProductsScreen = dashBoardScreen.navigateToExploreProductsScreen();
+        Assert.assertTrue(exploreProductsScreen.navitationBar.isEnabled());
+    }
+
+    @Test(priority = 6)
+    public void testNavigateToInProgressListNoOrders() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        dashBoardScreen.navigateToInProgressListNoOrders();
+        Assert.assertTrue(dashBoardScreen.noInProgressReportFormTitle.isEnabled());
+    }
+
+    @Test(priority = 7) @Ignore
+    public void testNavigateToCloedListNoOrders() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        dashBoardScreen.navigateToClosedListNoOrders();
+        Assert.assertTrue(dashBoardScreen.noClosedReportFormTitle.isEnabled());
+    }
+
+    @Test(priority = 8) @Ignore
+    public void testnavigateToPropertyLocationScreen() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = dashBoardScreen.navigateToOrderReportPropertyLocationScreen();
         Assert.assertTrue(orderReportFlowScreenPropertyLocation.currentLocationButton.isEnabled());
     }
-
 }

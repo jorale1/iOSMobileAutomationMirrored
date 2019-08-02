@@ -11,10 +11,8 @@ import java.net.URL;
 
 public class BaseTest {
 
-    //private IOSDriver driver;
     private static final String IOS_APP_PATH =  System.getenv("IOS_APP_PATH");
     private static final String APPIUM_SERVER_HUB_URL = System.getenv("APPIUM_SERVER_HUB_URL");
-
 
     @Parameters({"environment", "device"})
     @BeforeMethod
