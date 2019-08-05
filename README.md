@@ -19,7 +19,7 @@ setx  IOS_APP_PATH={{PATH TO IOS .APP }}
 setx  APPIUM_SERVER_HUB_URL={{ URL OF APPIUM SERVER HUB }}
 ```
 
-## Run tests 
+## Run tests via Console
 
 ```console
 mvn verify

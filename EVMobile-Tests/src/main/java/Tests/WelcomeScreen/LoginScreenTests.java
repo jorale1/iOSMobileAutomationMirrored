@@ -15,14 +15,15 @@ import static java.lang.Thread.sleep;
 public class LoginScreenTests extends BaseMobileTest {
 
     @Test(priority = 1)
+    @Ignore
 
     public void testLogin() {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
         Assert.assertTrue(loginscreen.loginEmailAddress.isDisplayed());
     }
 
-
-    @Test(priority = 2) @Ignore
+    @Test(priority = 2)
+    @Ignore
 
     public void testBacktoWelcomeScreen() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
@@ -31,7 +32,7 @@ public class LoginScreenTests extends BaseMobileTest {
         Assert.assertTrue(welcomescreen.loginlink.isDisplayed());
     }
 
-    @Test(priority = 3) @Ignore
+    @Test(priority = 3)
 
     public void testLoginvalidcredentials() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();
@@ -40,7 +41,8 @@ public class LoginScreenTests extends BaseMobileTest {
         Assert.assertTrue(dashboard.dashboardForm.isDisplayed());
     }
 
-    @Test(priority = 4) @Ignore
+    @Test(priority = 4)
+    @Ignore
 
     public void testNavigateToResetPasswordScreen() throws InterruptedException, AWTException {
         LoginScreen loginscreen = welcomeScreen.navigateToLoginScreen();

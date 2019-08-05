@@ -75,7 +75,6 @@ public class WelcomeScreen extends BasePage {
     @FindBy(name = "Cancel")
     public WebElement cancelEnvSelector;
 
-
     public WelcomeScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

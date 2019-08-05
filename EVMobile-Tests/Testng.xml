@@ -6,17 +6,19 @@
 
     <test name="Simulator-Iphone X" enabled="true">
         <parameter name="device" value="S-iPhone X" />
-        <parameter name="environment" value="Stage" />
+        <parameter name="environment" value="Production" />
+
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.LoginScreenTests" />
+            <class name="Tests.WelcomeScreen.DashboardScreenTests" />
 
         </classes>
     </test>
 
     <test name="Simulator-Iphone 6" enabled="false">
         <parameter name="device" value="S-iPhone 6" />
+        <parameter name="environment" value="Production" />
 
         <classes>
 
@@ -27,6 +29,7 @@
 
     <test name="Real-Iphone 8 Plus" enabled="false">
         <parameter name="device" value="R-Iphone 8 Plus" />
+        <parameter name="environment" value="Production" />
 
         <classes>
 

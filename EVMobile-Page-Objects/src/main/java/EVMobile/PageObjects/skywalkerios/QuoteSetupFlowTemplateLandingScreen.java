@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class QuoteSetupFlowScreenSetup extends BasePage {
+public class QuoteSetupFlowTemplateLandingScreen extends BasePage {
 
     @FindBy(name = "Cross")
     public WebElement dismiss;
@@ -14,13 +14,16 @@ public class QuoteSetupFlowScreenSetup extends BasePage {
     @FindBy(name = "QuoteTemplateMachine")
     public WebElement quoteMachineImage;
 
+    @FindBy(name = "Automate your quoting process now")
+    public WebElement screenTitle;
+
     @FindBy(name = "Set up your base prices once, and create accurate quotes in seconds. Make changes anytime or customize individual quotes to match the requirements of your job.")
-    public WebElement guideMessage;
+    public WebElement screenSubTitle;
 
     @FindBy(name = "Set Up Now")
     public WebElement setUpNowButton;
 
-    public QuoteSetupFlowScreenSetup(IOSDriver driver) {
+    public QuoteSetupFlowTemplateLandingScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
