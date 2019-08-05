@@ -71,8 +71,6 @@ public class DashBoardScreen extends BasePage {
     @FindBy(name = "Closed reports will be shown here.")
     public WebElement noClosedReportFormSubTitle;
 
-
-
     public DashBoardScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

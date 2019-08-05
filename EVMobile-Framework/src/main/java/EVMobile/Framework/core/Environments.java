@@ -6,9 +6,4 @@ public class Environments {
     public static final String STAGE_INTERNAL = "StageInternal";
     public static final String STAGE = "Stage";
     public static final String PRODUCTION = "ProductionInternal";
-
-    public static void selectEnvironment(){
-
-    }
-
 }

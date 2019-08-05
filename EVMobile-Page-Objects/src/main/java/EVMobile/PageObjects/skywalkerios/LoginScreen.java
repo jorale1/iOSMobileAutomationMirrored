@@ -1,6 +1,7 @@
 package EVMobile.PageObjects.skywalkerios;
 
 import EVMobile.Framework.core.BasePage;
+import EVMobile.Framework.core.LoginAccounts;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -35,9 +36,6 @@ public class LoginScreen extends BasePage {
     @FindBy(name = "signInViewController.signIn")
     public WebElement login;
 
-    public String email = "acosta.a.jorge+construction3@gmail.com";
-    public String password = "EagleView1";
-
     public LoginScreen(IOSDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -59,7 +57,7 @@ public class LoginScreen extends BasePage {
     public DashBoardScreen navigateToDashboard() throws AWTException, InterruptedException {
         navigateFromWelcomeToLoginScreen();
         sleep(2000);
-        enterCredentials(email, password);
+        enterCredentials(LoginAccounts.NEW_CONSTRUCTION_ACCOUNT, LoginAccounts.NEW_CONSTRUCTION_ACCOUNT_PASSWORD);
         loginDone.click();
         login.click();
         return new DashBoardScreen(driver);
@@ -68,7 +66,7 @@ public class LoginScreen extends BasePage {
     public WelcomeScreen navigateBacktoWelcome() throws AWTException, InterruptedException {
         navigateFromWelcomeToLoginScreen();
         sleep(2000);
-        enterCredentials(email, password);
+        enterCredentials(LoginAccounts.NEW_CONSTRUCTION_ACCOUNT, LoginAccounts.NEW_CONSTRUCTION_ACCOUNT_PASSWORD);
         loginDone.click();
         dismiss.click();
         return new WelcomeScreen(driver);

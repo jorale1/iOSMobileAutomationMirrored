@@ -16,35 +16,35 @@ public class DashboardScreenTests extends BaseMobileTest {
         Assert.assertTrue(searchScreen.pageName.isEnabled());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2) @Ignore
     public void testNavigateToSettingsScreen() throws InterruptedException, AWTException {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         SettingsScreen settingsScreen = dashBoardScreen.navigatetoSettingsScreen();
         Assert.assertTrue(settingsScreen.screenTitle.isEnabled());
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3) @Ignore
     public void testCloseGetAutomaticQuotesForm() throws InterruptedException, AWTException {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         dashBoardScreen.closeSetUpNowAutomaticQuotes();
         Assert.assertTrue(dashBoardScreen.welcomeFormViewReportTypesButton.isEnabled());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4) @Ignore
     public void testNavigateToQuoteTemplateLandingScreen() throws InterruptedException, AWTException {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         QuoteSetupFlowTemplateLandingScreen quoteSetupFlowTemplateLandingScreen = dashBoardScreen.navigateToQuoteTemplateLandingScreen();
         Assert.assertTrue(quoteSetupFlowTemplateLandingScreen.quoteMachineImage.isEnabled());
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5) @Ignore
     public void testNavigateToExploreProductsScreen() throws InterruptedException, AWTException {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         ExploreProductsScreen exploreProductsScreen = dashBoardScreen.navigateToExploreProductsScreen();
         Assert.assertTrue(exploreProductsScreen.navitationBar.isEnabled());
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6) @Ignore
     public void testNavigateToInProgressListNoOrders() throws InterruptedException, AWTException {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         dashBoardScreen.navigateToInProgressListNoOrders();
