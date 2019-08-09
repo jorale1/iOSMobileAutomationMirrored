@@ -1,6 +1,6 @@
 package Tests.WelcomeScreen;
 
-import EVMobile.PageObjects.skywalkerios.DashBoardScreen;
+import EVMobile.PageObjects.skywalkerios.dashboard.DashBoardScreen;
 import EVMobile.PageObjects.skywalkerios.OrderReportFlowScreenAddressVerifier;
 import EVMobile.PageObjects.skywalkerios.OrderReportFlowScreenPropertyLocation;
 import org.testng.Assert;

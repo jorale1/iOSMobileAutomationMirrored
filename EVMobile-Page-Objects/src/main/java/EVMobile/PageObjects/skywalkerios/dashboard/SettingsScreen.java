@@ -1,6 +1,7 @@
-package EVMobile.PageObjects.skywalkerios;
+package EVMobile.PageObjects.skywalkerios.dashboard;
 
 import EVMobile.Framework.core.BasePage;
+import EVMobile.PageObjects.skywalkerios.*;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.WaitOptions;

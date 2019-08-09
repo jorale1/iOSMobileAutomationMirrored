@@ -1,6 +1,7 @@
 package EVMobile.PageObjects.skywalkerios;
 
 import EVMobile.Framework.core.BasePage;
+import EVMobile.PageObjects.skywalkerios.dashboard.DashBoardScreen;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
