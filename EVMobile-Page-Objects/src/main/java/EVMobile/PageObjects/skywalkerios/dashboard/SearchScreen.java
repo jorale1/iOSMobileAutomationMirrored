@@ -157,7 +157,6 @@ public class SearchScreen extends BasePage {
         searchFieldAddress.click();
         searchFieldAddress.sendKeys(SearchData.VALID_ADDRESS_CITY);
         cancelLink.click();
-
     }
 
     public DashBoardScreen navigateFromRecentSearchsBackToDashboard() throws AWTException, InterruptedException {
@@ -174,9 +173,6 @@ public class SearchScreen extends BasePage {
         closeButton.click();
         sleep(2000);
         return new DashBoardScreen(driver);
-        //searchFieldAddress.click();
-        //recentClearButton.click();
-        //sleep(2000);
     }
 
 }
