@@ -2,6 +2,7 @@ package EVMobile.PageObjects.skywalkerios;
 
 import EVMobile.Framework.core.BasePage;
 import EVMobile.Framework.core.LoginAccounts;
+import EVMobile.PageObjects.skywalkerios.dashboard.DashBoardScreen;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

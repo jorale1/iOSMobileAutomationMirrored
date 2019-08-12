@@ -11,7 +11,7 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.DashboardScreenTests" />
+            <class name="Tests.WelcomeScreen.SearchScreenTests" />
 
         </classes>
     </test>

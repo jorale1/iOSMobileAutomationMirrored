@@ -1,6 +1,9 @@
 package Tests.WelcomeScreen;
 
 import EVMobile.PageObjects.skywalkerios.*;
+import EVMobile.PageObjects.skywalkerios.dashboard.DashBoardScreen;
+import EVMobile.PageObjects.skywalkerios.dashboard.SearchScreen;
+import EVMobile.PageObjects.skywalkerios.dashboard.SettingsScreen;
 import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
