@@ -1,6 +1,7 @@
 package EVMobile.PageObjects.skywalkerios.dashboard;
 
 import EVMobile.Framework.core.BasePage;
+import EVMobile.Framework.core.LoginAccounts;
 import EVMobile.PageObjects.skywalkerios.*;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
@@ -89,8 +90,8 @@ public class SettingsScreen extends BasePage {
     @FindBy(name = "Email unavailable")
     public WebElement emailUnavailableSimulatortitle;
 
-    public String userNoQuoteSetup = "skywalker-ios-test4@mail.com";
-    public String userNoQuoteSetupPassword = "EagleView1";
+    public String userNoQuoteSetup = LoginAccounts.NEW_CONSTRUCTION_ACCOUNT;
+    public String userNoQuoteSetupPassword = LoginAccounts.NEW_CONSTRUCTION_ACCOUNT_PASSWORD;
     public String userWithQuoteSetup = "jorge.acosta@eagleview.com";
     public String userWithQuoteSetupPassword = "EagleView1";
 
