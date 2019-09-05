@@ -13,4 +13,7 @@ public class LoginAccounts {
     public static final String NEW_CONSTRUCTION_ACCOUNT_PRIMARY_PHONE = "8006927753";
     public static final String CONSTRUCTION_ACCOUNT_WITH_ORDERS = "jorge.acosta@eagleview.com";
     public static final String CONSTRUCTION_ACCOUNT_WITH_ORDERS_PASSWORD = "EagleView1";
+
+    public static final String ACCOUNT_WITH_COMPLETED_REPORTS = "salesteamtest@eagleview.com";
+    public static final String ACCOUNT_WITH_COMPLETED_REPORTS_PASSWORD = "eagleview";
 }

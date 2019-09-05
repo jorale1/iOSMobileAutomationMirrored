@@ -1,15 +1,19 @@
 package EVMobile.PageObjects.skywalkerios.dashboard;
 
 import EVMobile.Framework.core.BasePage;
+import EVMobile.Framework.core.LoginAccounts;
 import EVMobile.PageObjects.skywalkerios.*;
+import EVMobile.PageObjects.skywalkerios.reportDetails.CompletedPremiumOrderReportDetailScreen;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
+import java.time.Duration;
 
 import static java.lang.Thread.sleep;
 
@@ -71,6 +75,12 @@ public class DashBoardScreen extends BasePage {
 
     @FindBy(name = "Closed reports will be shown here.")
     public WebElement noClosedReportFormSubTitle;
+
+    @FindBy(xpath = "//XCUIElementTypeCell[5]")
+    public WebElement premiumReportCard;
+
+    @FindBy(name = "Done")
+    public WebElement loginDone;
 
     public DashBoardScreen(IOSDriver driver) {
         super(driver);
@@ -143,6 +153,25 @@ public class DashBoardScreen extends BasePage {
         TouchAction ta = new TouchAction(driver);
         ta.tap(new PointOption().withCoordinates(170, 740)).perform();
         return new OrderReportFlowScreenPropertyLocation(driver);
+    }
+
+    public CompletedPremiumOrderReportDetailScreen navigateToPremiumOrderDetailScreen() throws InterruptedException, AWTException {
+        WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+        LoginScreen loginScreen = welcomeScreen.navigateToLoginScreen();
+        loginScreen.enterCredentials(LoginAccounts.ACCOUNT_WITH_COMPLETED_REPORTS, LoginAccounts.ACCOUNT_WITH_COMPLETED_REPORTS_PASSWORD);
+        loginDone.click();
+        loginScreen.login.click();
+        sleep(9000);
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(driver);
+        swapToOrderReportCard();
+        premiumReportCard.click();
+        sleep(9000);
+        return new CompletedPremiumOrderReportDetailScreen(driver);
+    }
+
+    public void swapToOrderReportCard() {
+            TouchAction ta = new TouchAction(driver);
+            ta.press(PointOption.point(181, 450)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(181, 200)).release().perform();
     }
 }
 
