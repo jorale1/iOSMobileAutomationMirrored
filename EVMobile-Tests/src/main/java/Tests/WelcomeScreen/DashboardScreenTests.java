@@ -4,6 +4,7 @@ import EVMobile.PageObjects.skywalkerios.*;
 import EVMobile.PageObjects.skywalkerios.dashboard.DashBoardScreen;
 import EVMobile.PageObjects.skywalkerios.dashboard.SearchScreen;
 import EVMobile.PageObjects.skywalkerios.dashboard.SettingsScreen;
+import EVMobile.PageObjects.skywalkerios.reportDetails.CompletedPremiumOrderReportDetailScreen;
 import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -12,7 +13,7 @@ import java.awt.*;
 
 public class DashboardScreenTests extends BaseMobileTest {
 
-    @Test(priority = 1)
+    @Test(priority = 1) @Ignore
     public void testNavigateToSearchScreen() throws InterruptedException, AWTException {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         SearchScreen searchScreen = dashBoardScreen.navigateToSearchScreen();
@@ -66,5 +67,12 @@ public class DashboardScreenTests extends BaseMobileTest {
         DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
         OrderReportFlowScreenPropertyLocation orderReportFlowScreenPropertyLocation = dashBoardScreen.navigateToOrderReportPropertyLocationScreen();
         Assert.assertTrue(orderReportFlowScreenPropertyLocation.currentLocationButton.isEnabled());
+    }
+
+    @Test(priority = 9)
+    public void testnavigateToPremiumOrderDetailScreen() throws InterruptedException, AWTException {
+        DashBoardScreen dashBoardScreen = new DashBoardScreen(getDriver());
+        CompletedPremiumOrderReportDetailScreen completedPremiumOrderReportDetailScreen = dashBoardScreen.navigateToPremiumOrderDetailScreen();
+        Assert.assertTrue(completedPremiumOrderReportDetailScreen.measurementDetailsLink.isEnabled());
     }
 }
