@@ -8,10 +8,9 @@
         <parameter name="device" value="S-iPhone X" />
         <parameter name="environment" value="Production" />
 
-
         <classes>
 
-            <class name="Tests.WelcomeScreen.CompletePremiumOrderDetailScreenTests" />
+            <class name="Tests.WelcomeScreen.VisualizerScreenTests" />
 
         </classes>
     </test>
