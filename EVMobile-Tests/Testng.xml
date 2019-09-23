@@ -10,7 +10,7 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.VisualizerScreenTests" />
+            <class name="Tests.WelcomeScreen.WasteCalculationsTests" />
 
         </classes>
     </test>
