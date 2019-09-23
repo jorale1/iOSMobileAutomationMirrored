@@ -81,8 +81,6 @@ public class VisualizerScreen extends BasePage {
     @FindBy(name = "Slate")
     public WebElement asphaltMaterialSlateNavigationBarName;
 
-    //Roof-->Asphalt-->Materials-->Submaterials-->Options
-
     @FindBy(name = "Brownwood")
     public WebElement asphaltMaterialsSubMaterialBrownwoodLink;
 
