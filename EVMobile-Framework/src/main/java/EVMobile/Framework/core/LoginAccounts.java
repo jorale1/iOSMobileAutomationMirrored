@@ -16,4 +16,5 @@ public class LoginAccounts {
 
     public static final String ACCOUNT_WITH_COMPLETED_REPORTS = "salesteamtest@eagleview.com";
     public static final String ACCOUNT_WITH_COMPLETED_REPORTS_PASSWORD = "eagleview";
+    public static final String ACCOUNT_WITH_COMPLETED_REPORTS_EMAIL = "claire.foster@eagleview.com";
 }
