@@ -10,7 +10,7 @@
 
         <classes>
 
-            <class name="Tests.WelcomeScreen.ReportAdditionalInformationScreenTests" />
+            <class name="Tests.WelcomeScreen.OrderReportOrderDetailsScreenTests" />
 
         </classes>
     </test>
